@@ -6,7 +6,7 @@
 Gradle:
 
 ```
-debugCompile 'io.github.skyhacker2:sqliteonweb:1.0.1'
+debugCompile 'io.github.skyhacker2:sqliteonweb:1.0.2'
 releaseCompile 'io.github.skyhacker2:sqliteonweb-no-op:1.0.2'
 ```
 
