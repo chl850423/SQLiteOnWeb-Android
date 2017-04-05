@@ -1,7 +1,7 @@
-#SQLiteOnWeb
+# SQLiteOnWeb
 > A simple tool to see sqlite database data in browser
 
-##Install 
+## Install 
 
 Gradle:
 
