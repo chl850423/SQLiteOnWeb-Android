@@ -21,7 +21,7 @@ import io.github.skyhacker2.sqliteonweb.dtos.QueryResult;
 /**
  * Created by eleven on 16/4/3.
  */
-public class SQLiteOnWeb implements AndroidServer.AndroidServerListener{
+public class SQLiteOnWeb implements AndroidServer.AndroidServerListener {
     private final static String TAG = SQLiteOnWeb.class.getSimpleName();
     private Context mContext;
     private AndroidServer mServer;
@@ -30,14 +30,14 @@ public class SQLiteOnWeb implements AndroidServer.AndroidServerListener{
     private File mDatabaseDir;
 
     public static SQLiteOnWeb init(Context context) {
-        if (mSQLiteOnWeb == null){
+        if (mSQLiteOnWeb == null) {
             mSQLiteOnWeb = new SQLiteOnWeb(context);
         }
         return mSQLiteOnWeb;
     }
 
     public static SQLiteOnWeb init(Context context, int port) {
-        if (mSQLiteOnWeb == null){
+        if (mSQLiteOnWeb == null) {
             mSQLiteOnWeb = new SQLiteOnWeb(context, port);
         }
         return mSQLiteOnWeb;
@@ -186,10 +186,14 @@ public class SQLiteOnWeb implements AndroidServer.AndroidServerListener{
                                 row.add(Integer.valueOf(cursor.getInt(i)));
                                 break;
                             case Cursor.FIELD_TYPE_STRING:
-                                row.add(cursor.getString(i));
+                                String v = cursor.getString(i);
+                                if (v == null) {
+                                    v = "-";
+                                }
+                                row.add(v);
                                 break;
                             default:
-                                row.add("");
+                                row.add("-");
                         }
                     }
                     queryResult.rows.add(row);
@@ -209,7 +213,7 @@ public class SQLiteOnWeb implements AndroidServer.AndroidServerListener{
     @Override
     public Message onGetDBList(Map<String, String> params) {
         QueryResult queryResult = new QueryResult();
-        for(String name : mDatabaseDir.list()) {
+        for (String name : mDatabaseDir.list()) {
             queryResult.rows.add(name);
         }
         queryResult.code = 0;
