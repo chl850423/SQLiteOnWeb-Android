@@ -1,9 +1,9 @@
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 version = "1.0.2"
-def siteUrl = 'https://github.com/skyhacker2/SQLiteOnWeb-Android'    // project homepage
-def gitUrl = 'https://github.com/skyhacker2/SQLiteOnWeb-Android.git' // project git
-group ="io.github.skyhacker2"
+def siteUrl = 'https://github.com/chl850423/SQLiteOnWeb-Android'    // project homepage
+def gitUrl = 'https://github.com/chl850423/SQLiteOnWeb-Android.git' // project git
+group = "io.github.chl850423"
 
 
 install {
@@ -22,9 +22,9 @@ install {
                 }
                 developers {
                     developer {
-                        id 'skyhacker2'
+                        id 'chl850423'
                         name 'Eleven.Chen'
-                        email 'skyhacker@126.com'
+                        email 'chl850423@163.com'
                     }
                 }
                 scm {
